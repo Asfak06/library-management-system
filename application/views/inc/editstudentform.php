@@ -1,5 +1,12 @@
 <H2>Edit Student</h2>
 <hr/>		
+<?php
+ $msg=$this->session->flashdata('msg');
+ if(isset($msg))
+    {
+        echo $msg;
+    }
+?>
         <div class="panel-body" style="width:600px;">
             <form action="<?php echo base_url();?>student/updatestudent" method="post" >
                 <input type="hidden" name="id" value="<?php echo $stuById->id; ?>" >

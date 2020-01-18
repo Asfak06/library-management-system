@@ -6,11 +6,11 @@
             <li><a href="<?php echo base_url();?>Student/addstudent.php"><span class="fa fa-caret-right"></span>Add Student</a></li>
             <li><a href="<?php echo base_url();?>Student/studentlist.php"><span class="fa fa-caret-right"></span>Student List</a></li>
 			
-			<li><a href="adddep.html"><span class="fa fa-caret-right"></span>Add Department</a></li>
-            <li><a href="deplist.html"><span class="fa fa-caret-right"></span>Department List</a></li>
+			<li><a href="<?php echo base_url();?>Department/adddepartment"><span class="fa fa-caret-right"></span>Add Department</a></li>
+            <li><a href="<?php echo base_url();?>Department/departmentlist.php"><span class="fa fa-caret-right"></span>Department List</a></li>
 								
-			<li><a href="addauthor.html"><span class="fa fa-caret-right"></span>Add Author</a></li>
-            <li><a href="authorlist.html"><span class="fa fa-caret-right"></span>Author List</a></li>
+			<li><a href="<?php echo base_url();?>author/addauthor"><span class="fa fa-caret-right"></span>Add Author</a></li>
+            <li><a href="<?php echo base_url();?>author/authorlist"><span class="fa fa-caret-right"></span>Author List</a></li>
 			
 			<li><a href="addbook.html"><span class="fa fa-caret-right"></span>Add Book</a></li>
             <li><a href="booklist.html"><span class="fa fa-caret-right"></span>Book List</a></li>

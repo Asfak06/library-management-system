@@ -923,3 +923,8 @@ table.table.list tr:first-child td {
   font-size: 30px;
   padding: 10px;
 }
+.dep{
+        width: 300px;
+        padding: 5px;
+        border: 1px solid #ddd;
+    }

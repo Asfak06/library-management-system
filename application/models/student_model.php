@@ -25,6 +25,22 @@ class Student_Model extends CI_Model
 		$result=$qresult->row();
 		return $result;
     }
+    public function updateStudentData($data){
+        $this->db->set('name',$data['name']);
+        $this->db->set('dept',$data['dept']);
+        $this->db->set('roll',$data['roll']);
+        $this->db->set('reg',$data['reg']);
+        $this->db->set('session',$data['session']);
+        $this->db->set('batch',$data['batch']);
+        $this->db->where('id',$data['id']);
+        $this->db->update('tbl_student');
+
+    }
+    public function delStudentById($id){
+    	$this->db->where('id',$id);
+    	$this->db->delete('tbl_student');
+    	
+    }
 }
 
 ?>

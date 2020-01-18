@@ -1,5 +1,12 @@
 <h2>Student List</h2>
-			<hr/>
+<hr/>
+<?php
+ $msg=$this->session->flashdata('msg');
+ if(isset($msg))
+    {
+        echo $msg;
+    }
+?>
 <table class="table">
   <thead>
     <tr>
@@ -29,7 +36,7 @@
       <td><?php echo $sdata->batch; ?></td>
       <td>
           <a href="<?php echo base_url();?>Student/editstudent/<?php echo $sdata->id;?>"><i class="fa fa-pencil"></i></a>
-          <a href="#myModal" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+          <a onclick="return confirm('Are you sure?');" href="<?php echo base_url();?>Student/delstudent/<?php echo $sdata->id;?>" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
       </td>
     </tr>
    <?php } ?> 
