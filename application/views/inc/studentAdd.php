@@ -23,8 +23,8 @@
                 </div>
                 <div class="form-group">
                     <label>Department</label>
-                    <input type="text" name="dept" class="form-control span12">
-                    <br>or,
+                   <!--  <input type="text" name="dept" class="form-control span12">
+                    <br>or, -->
                     <select name="dept" class="dep">
                         <option value="">select one</option>
                         <?php

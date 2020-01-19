@@ -29,7 +29,15 @@
     <tr>
       <td><?php echo $i; ?></td>
       <td><?php echo $sdata->name; ?></td>
-      <td><?php echo $sdata->dept; ?></td>
+      <td>
+        <?php
+         $sdepid=$sdata->dept; 
+         $getdep=$this->dep_model->getdep($sdepid);
+         if (isset($getdep)) {
+           echo $getdep->depname;
+         }
+        ?>
+      </td>
       <td><?php echo $sdata->roll; ?></td>
       <td><?php echo $sdata->reg; ?></td>
       <td><?php echo $sdata->session; ?></td>

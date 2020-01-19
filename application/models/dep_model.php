@@ -30,4 +30,12 @@ class Dep_Model extends CI_Model
        $this->db->where('depid',$depid);
       $this->db->delete('tbl_dep');
   }
+  public function getdep($sdepid){
+    $this->db->select('*');
+    $this->db->from('tbl_dep');
+    $this->db->where('depid',$sdepid);
+    $qresult=$this->db->get();
+    $result=$qresult->row();
+    return $result;
+  }
 }
