@@ -16,7 +16,28 @@
                 </div>
                 <div class="form-group">
                     <label>Department</label>
-                    <input type="text" name="dept" value="<?php echo $stuById->dept; ?>" class="form-control span12">
+                    <select name="dept" class="dep">
+                        <option value="">select one</option>
+                        <?php
+                            foreach ($depdata as $ddata) { 
+                            if ($stuById->dept==$ddata->depid) { ?>
+                                     <option style="" value="<?php echo $ddata->depid;?>" selected="selected" > 
+                                        <?php 
+                                          echo $ddata->depname; 
+                                        ?>
+                                     </option>
+                                      <?php  }  ?>            
+                     
+                         
+                        <option style="" value="<?php echo $ddata->depid;?>" > 
+                            <?php 
+                              echo $ddata->depname; 
+                            ?>
+                        </option>
+                        <?php
+                            }
+                        ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Roll No.</label>

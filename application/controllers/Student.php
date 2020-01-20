@@ -20,9 +20,9 @@ class Student extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['depdata']=$this->dep_model->getAlldepData();
-		$data['studentAdd']=$this->load->view('inc/studentAdd',$data,TRUE);
+		$data['content']=$this->load->view('inc/studentAdd',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('addstudent',$data);
+		$this->load->view('home',$data);
 	}
 	public function addStudentForm(){
 		$data['name']=$this->input->post('name');
@@ -57,9 +57,9 @@ class Student extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['studentdata']=$this->student_model->getAllstudentData();
-		$data['liststudent']=$this->load->view('inc/liststudent',$data,TRUE);
+		$data['content']=$this->load->view('inc/liststudent',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('studentlist',$data);
+		$this->load->view('home',$data);
 	}
 
 	public function editstudent($id){
@@ -68,9 +68,10 @@ class Student extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['stuById']=$this->student_model->getStudentById($id);
-		$data['editstudent']=$this->load->view('inc/editstudentform',$data,TRUE);
+		$data['depdata']=$this->dep_model->getAlldepData();
+		$data['content']=$this->load->view('inc/editstudentform',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('editstudent',$data);
+		$this->load->view('home',$data);
 	}
 	public function updatestudent(){
 		$data['id']=$this->input->post('id');

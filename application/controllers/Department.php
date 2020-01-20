@@ -17,9 +17,9 @@ class Department extends CI_Controller {
 		$data['title']='Add new department';
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
-		$data['depAdd']=$this->load->view('inc/departmentAdd','',TRUE);
+		$data['content']=$this->load->view('inc/departmentAdd','',TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('adddepartment',$data);
+		$this->load->view('home',$data);
 	}
 		public function addDepartmentForm(){
 		$data['depname']=$this->input->post('depname');
@@ -43,9 +43,9 @@ class Department extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['depdata']=$this->dep_model->getAlldepData();
-		$data['listdepartment']=$this->load->view('inc/listdepartment',$data,TRUE);
+		$data['content']=$this->load->view('inc/listdepartment',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('departmentlist',$data);
+		$this->load->view('home',$data);
 	}
 	public function editdepartment($depid){
         $data=array();
@@ -53,9 +53,9 @@ class Department extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['depById']=$this->dep_model->getDepById($depid);
-		$data['editdep']=$this->load->view('inc/editdep',$data,TRUE);
+		$data['content']=$this->load->view('inc/editdep',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('editdepartment',$data);
+		$this->load->view('home',$data);
 	}
 	public function updatedepartment(){
         $data['id']=$this->input->post('depid');

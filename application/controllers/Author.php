@@ -16,9 +16,9 @@ class Author extends CI_Controller {
 		$data['title']='Add new department';
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
-		$data['authAdd']=$this->load->view('inc/addauthor','',TRUE);
+		$data['content']=$this->load->view('inc/addauthor','',TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('addauthor',$data);
+		$this->load->view('home',$data);
 	}
 	public function addAuthorForm(){
 		$data['auth_name']=$this->input->post('authname');
@@ -41,18 +41,18 @@ class Author extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['authdata']=$this->auth_model->getAllauthData();
-		$data['listauthor']=$this->load->view('inc/listauthor',$data,TRUE);
+		$data['content']=$this->load->view('inc/listauthor',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('authorlist',$data);
+		$this->load->view('home',$data);
 	}
 	public function editauthor($auth_id){
 		$data['title']='Edit author';
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['authById']=$this->auth_model->getAuthById($auth_id);
-		$data['editauth']=$this->load->view('inc/editauth',$data,TRUE);
+		$data['content']=$this->load->view('inc/editauth',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
-		$this->load->view('editauthor',$data);
+		$this->load->view('home',$data);
 	}
 	public function updateauthor(){
         $data['id']=$this->input->post('authid');
