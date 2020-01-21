@@ -1,4 +1,4 @@
-<H2>Edit Student</h2>
+<H2>Edit book</h2>
 <hr/>		
 <?php
  $msg=$this->session->flashdata('msg');
@@ -16,11 +16,11 @@
     }
 </style>
         <div class="panel-body" style="width:600px;">
-            <form action="<?php echo base_url();?>student/updatestudent" method="post" >
-                <input type="hidden" name="id" value="<?php echo $stuById->id; ?>" >
+            <form action="<?php echo base_url();?>book/updatebook" method="post" >
+                <input type="hidden" name="id" value="<?php echo $bookById->bookid; ?>" >
                 <div class="form-group">
-                    <label>Student Name</label>
-                    <input type="text" name="name" value="<?php echo $stuById->name; ?>" class="form-control span12">
+                    <label>Book Name</label>
+                    <input type="text" name="name" value="<?php echo $bookById->bookname; ?>" class="form-control span12">
                 </div>
                 <div class="form-group">
                     <label>Department</label>
@@ -28,7 +28,7 @@
                         <option value="">select one</option>
                         <?php
                             foreach ($departdata as $ddata) { 
-                            if ($stuById->dept==$ddata->depid) { ?>
+                            if ($bookById->dept==$ddata->depid) { ?>
                             <option style="" value="<?php echo $ddata->depid; ?>" selected="selected" > 
                                 <?php 
                                   echo $ddata->depname; 
@@ -48,21 +48,31 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Roll No.</label>
-                    <input type="text" name="roll" value="<?php echo $stuById->roll; ?>" class="form-control span12">
+                    <label>Author</label>
+                    <select name="auth" class="dep">
+                        <option value="">select one</option>
+                        <?php
+                            foreach ($authdata as $adata) { 
+                            if ($bookById->auth==$adata->auth_id) { ?>
+                            <option style="" value="<?php echo $adata->auth_id; ?>" selected="selected" > 
+                                <?php 
+                                  echo $adata->auth_name; 
+                                ?>
+                           </option>
+                                <?php  } else{ ?>            
+                     
+                         
+                            <option style="" value="<?php echo $adata->auth_id; ?>"> 
+                                <?php 
+                                  echo $adata->auth_name; 
+                                ?>
+                            </option>
+                        <?php
+                            }}
+                        ?>
+                    </select>
                 </div>
-				<div class="form-group">
-                    <label>Reg. No.</label>
-                    <input type="text" name="reg" value="<?php echo $stuById->reg; ?>" class="form-control span12">
-                </div>
-                <div class="form-group">
-                    <label>Session</label>
-                    <input type="text" name="session" value="<?php echo $stuById->session; ?>" class="form-control span12">
-                </div>
-                <div class="form-group">
-                    <label>Batch</label>
-                    <input type="text" name="batch" value="<?php echo $stuById->batch; ?>" class="form-control span12">
-                </div>
+				
                 <div class="form-group">
 				<input type="submit" name="" class="btn btn-primary" value="Submit"> 
                 </div>

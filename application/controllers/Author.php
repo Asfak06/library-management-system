@@ -82,3 +82,4 @@ class Author extends CI_Controller {
 	}
 }
 
+?>

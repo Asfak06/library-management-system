@@ -13,7 +13,6 @@ class Student extends CI_Controller {
 		$this->load->model('dep_model');
 		$data=array();		
 	}
-
 	public function addstudent(){
 		$data=array();
 		$data['title']='Add new student';
@@ -68,7 +67,7 @@ class Student extends CI_Controller {
 		$data['header']=$this->load->view('inc/header',$data,TRUE);
 		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
 		$data['stuById']=$this->student_model->getStudentById($id);
-		$data['depdata']=$this->dep_model->getAlldepData();
+		$data['departdata']=$this->dep_model->getAlldepData();
 		$data['content']=$this->load->view('inc/editstudentform',$data,TRUE);
 		$data['footer']=$this->load->view('inc/footer','',TRUE);
 		$this->load->view('home',$data);
