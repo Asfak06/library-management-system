@@ -84,7 +84,7 @@ class Book extends CI_Controller {
 		$name=$data['bookname'];
 		$dept=$data['dept'];
 		$auth=$data['auth'];
-		if(empty($name) && empty($dept) && empty($auth)){
+		if(empty($name) && empty($dept) && empty($auth) ){
            $sdata=array();
            $sdata['msg']='<span style="color:red ">field must not be empty</span>';
            $this->session->set_flashdata($sdata);
