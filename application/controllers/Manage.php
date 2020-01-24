@@ -31,7 +31,13 @@ class Manage extends CI_Controller {
 	public function issuebooklist(){
 
 	}
-	public function getBookByDepId(){
-		
+	public function getBookByDepId($dep){
+				$getAllBook=$this->manage_model->getBookByDep($dep);
+				$output=null;
+                $output .='<option value="0">select one</option>';
+                foreach ($getAllBook as $book) {
+                	$output .='<option value="'.$book->bookid.'">'.$book->bookname.'</option>';
+                }
+                echo  $output;
 	}
 }
