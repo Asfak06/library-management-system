@@ -11,6 +11,31 @@
               });
         });
     });
+     $(document).ready(function() {
+        $("#stu").change(function(){
+              var stu =$("#stu").val();
+              $.ajax({
+                type:"POST",
+                url:"<?php echo base_url();?>manage/getStuDataById/"+stu,
+                success:function(data){
+                   $("#reg").html(data);
+                }
+              });
+        });
+    });
+      $(document).ready(function() {
+        $("#stu").change(function(){
+              var stu =$("#stu").val();
+              $.ajax({
+                type:"POST",
+                url:"<?php echo base_url();?>manage/getsesStuDataById/"+stu,
+                success:function(data){
+                   $("#ses").html(data);
+                }
+              });
+        });
+    });
+
 </script>
 <H2>Issue Book</h2>
 <hr/>
@@ -32,15 +57,35 @@
             <form action="<?php echo base_url();?>manage/addIssueForm" method="post" >
                 <div class="form-group">
                     <label>Student Name</label>
-                    <input type="text" name="sname" class="form-control span12">
+                    <!-- <input type="text" name="sname" class="form-control span12"> -->
+                    <select name="sname" class="dep" id="stu">
+                        <option value="">select one</option>
+                        <?php
+                            foreach ($studata as $sdata) {              
+                        ?>
+                        <option style="" value="<?php echo $sdata->id;?>" > 
+                            <?php 
+                              echo $sdata->name; 
+                            ?>
+                        </option>
+                        <?php
+                            }
+                        ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Student Reg.</label>
-                    <input type="text" name="reg" class="form-control span12">
+                    <!-- <input type="text" name="reg" id="reg" class="form-control span12"> -->
+                     <select name="reg" class="dep" id="reg">
+                        <option value="">select one</option>
+                        
+                    </select>
                 </div>
                  <div class="form-group">
                     <label>Session</label>
-                    <input type="text" name="session" class="form-control span12">
+                    <select name="ses" class="dep" id="ses">
+                        <option value="">select one</option>                     
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Department</label>                 
@@ -56,24 +101,14 @@
                         </option>
                         <?php
                             }
-                        ?>
+                        ?>                     
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Book name &nbsp</label>
-                    <select name="dept" class="dep" id="book">
+                    <select name="book" class="dep" id="book">
                         <option value="">select one</option>
-                        <?php
-                            foreach ($depdata as $ddata) {              
-                        ?>
-                        <option style="" value="<?php echo $ddata->depid;?>" > 
-                            <!-- <?php 
-                              echo $ddata->depname; 
-                            ?> -->
-                        </option>
-                        <?php
-                            }
-                        ?>
+                        
                     </select>
                 </div>				
                <div class="form-group">

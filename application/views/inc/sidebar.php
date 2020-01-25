@@ -16,7 +16,7 @@
             <li><a href="<?php echo base_url();?>book/booklist"><span class="fa fa-caret-right"></span>Book List</a></li>
 			
 			<li><a href="<?php echo base_url();?>manage/issuebook"><span class="fa fa-caret-right"></span>Issue Book</a></li>
-            <li><a href="<?php echo base_url();?>manage/issuebooklist"><span class="fa fa-caret-right"></span>Edit List</a></li>			
+            <li><a href="<?php echo base_url();?>manage/issuelist"><span class="fa fa-caret-right"></span>Edit List</a></li>			
 			
     </ul></li>
   </ul>
