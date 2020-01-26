@@ -92,5 +92,19 @@ class Manage extends CI_Controller {
                 }
                 echo  $output;
 	}
+	public function editissue($id){
+		$data['title']='Edit issue';
+		$data['header']=$this->load->view('inc/header',$data,TRUE);
+		$data['sidebar']=$this->load->view('inc/sidebar','',TRUE);
+		$data['issueById']=$this->manage_model->getIssueById($id);
+		$data['departdata']=$this->dep_model->getAlldepData();
+		$data['studata']=$this->student_model->getAllstudentData();
+		$data['content']=$this->load->view('inc/editissueform',$data,TRUE);
+		$data['footer']=$this->load->view('inc/footer','',TRUE);
+		$this->load->view('home',$data);
+	}
+	public function updateissue(){
+
+	}
 
 }

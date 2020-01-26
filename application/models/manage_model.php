@@ -32,4 +32,12 @@ class Manage_Model extends CI_Model
 		$result=$qresult->result();
 		return $result;
     }
+    public function getIssueById($id){
+    	$this->db->select('*');
+		$this->db->from('tbl_issue');
+		$this->db->where('id',$id);
+		$qresult=$this->db->get();
+		$result=$qresult->row();
+		return $result;
+    }
 }

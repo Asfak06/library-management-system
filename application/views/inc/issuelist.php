@@ -93,8 +93,8 @@
            ?>
       </td>
       <td>
-          <a href=""><i class="fa fa-pencil"></i></a>
-          <a onclick="return confirm('Are you sure?');" href="" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+          <a href="<?php echo base_url();?>Manage/editissue/<?php echo $idata->id;?>"><i class="fa fa-pencil"></i></a>
+          <a onclick="return confirm('Are you sure?');" href="<?php echo base_url();?>Manage/delissue/<?php echo $idata->id;?>" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
       </td>
     </tr> 
   <?php }?>
