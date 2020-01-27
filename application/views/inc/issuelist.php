@@ -19,6 +19,7 @@
       <th>Session</th>
       <th>Book name</th>
       <th>Issue Date</th>
+      <th>Return Date</th>
       <th style="width: 3.5em;">action</th>
     </tr>
   </thead>
@@ -61,6 +62,7 @@
                if ($sdata->id==$name) 
                 {
                    echo $sdata->reg;
+                   $regis=$sdata->reg;
                  }
               }
            ?>
@@ -81,9 +83,10 @@
               $bname=$idata->bname;
               foreach ($bookdata as $bdata ) {
                if ($bdata->bookid==$bname) 
-                {
-                   echo $bdata->bookname;
-                 }
+                { ?>
+                  <a href="<?php echo base_url();?>Manage/bookinfo/<?php echo $bname;?>"><?php echo $bdata->bookname; ?> </a>
+                   
+                <?php }
               }
            ?>
       </td>
@@ -92,9 +95,15 @@
              echo date("d/m/Y h:ia", strtotime($idata->date));
            ?>
       </td>
+        <td>
+        <?php           
+             echo $idata->return;
+           ?>
+      </td>
       <td>
           <a href="<?php echo base_url();?>Manage/editissue/<?php echo $idata->id;?>"><i class="fa fa-pencil"></i></a>
           <a onclick="return confirm('Are you sure?');" href="<?php echo base_url();?>Manage/delissue/<?php echo $idata->id;?>" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+          <a href="<?php echo base_url();?>Manage/studentdetails/<?php echo $regis;?>"><i class="fa fa-eye"></i></a>
       </td>
     </tr> 
   <?php }?>

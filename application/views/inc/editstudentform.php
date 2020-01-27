@@ -64,6 +64,14 @@
                     <input type="text" name="batch" value="<?php echo $stuById->batch; ?>" class="form-control span12">
                 </div>
                 <div class="form-group">
+                    <label>phone</label>
+                    <input type="text" name="phone" value="<?php echo $stuById->phone; ?>" class="form-control span12">
+                </div>
+                <div class="form-group">
+                    <label>email</label>
+                    <input type="text" name="email" value="<?php echo $stuById->email; ?>" class="form-control span12">
+                </div>
+                <div class="form-group">
 				<input type="submit" name="" class="btn btn-primary" value="Submit"> 
                 </div>
                    

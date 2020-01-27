@@ -30,6 +30,8 @@ class Student extends CI_Controller {
 		$data['reg']=$this->input->post('reg');
 		$data['session']=$this->input->post('session');
 		$data['batch']=$this->input->post('batch');
+		$data['phone']=$this->input->post('phone');
+		$data['email']=$this->input->post('email');
 
 		$name=$data['name'];
 		$dept=$data['dept'];
@@ -37,7 +39,9 @@ class Student extends CI_Controller {
 		$reg=$data['reg'];
 		$session=$data['session'];
 		$batch=$data['batch'];
-		if(empty($name) && empty($dept) && empty($roll) && empty($reg) && empty($session) && empty($batch)){
+		$phone=$data['phone'];
+		$email=$data['email'];
+		if(empty($name) && empty($dept) && empty($roll) && empty($reg) && empty($session) && empty($batch) && empty($phone) && empty($email)){
            $sdata=array();
            $sdata['msg']='<span style="color:red ">field must not be empty</span>';
            $this->session->set_flashdata($sdata);
@@ -80,6 +84,8 @@ class Student extends CI_Controller {
 		$data['reg']=$this->input->post('reg');
 		$data['session']=$this->input->post('session');
 		$data['batch']=$this->input->post('batch');
+		$data['phone']=$this->input->post('phone');
+		$data['email']=$this->input->post('email');
         
         $id=$data['id'];  
 		$name=$data['name'];
@@ -88,7 +94,9 @@ class Student extends CI_Controller {
 		$reg=$data['reg'];
 		$session=$data['session'];
 		$batch=$data['batch'];
-		if(empty($name) && empty($dept) && empty($roll) && empty($reg) && empty($session) && empty($batch)){
+		$phone=$data['phone'];
+		$email=$data['email'];
+		if(empty($name) && empty($dept) && empty($roll) && empty($reg) && empty($session) && empty($batch)&& empty($phone)&& empty($email)){
            $sdata=array();
            $sdata['msg']='<span style="color:red ">field must not be empty</span>';
            $this->session->set_flashdata($sdata);

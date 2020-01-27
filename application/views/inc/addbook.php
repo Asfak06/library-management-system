@@ -57,6 +57,10 @@
                         ?>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Total Books</label>
+                    <input type="text" name="stock" class="form-control span12">
+                </div>
                 
                 <div class="form-group">
 				<input type="submit" name="" class="btn btn-primary" value="Submit"> 

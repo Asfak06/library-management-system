@@ -88,7 +88,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Department</label>                 
+                    <label>Department(book)</label>                 
                     <select name="dept" class="dep" id="Department">
                         <option value="">select one</option>
                         <?php
@@ -110,7 +110,11 @@
                         <option value="">select one</option>
                         
                     </select>
-                </div>				
+                </div>	
+                <div class="form-group">
+                    <label>Return date &nbsp(DD/MM/Y)</label>
+                    <input type="text" name="return" >
+                </div>			
                <div class="form-group">
 				<input type="submit" name="" class="btn btn-primary" value="Submit"> 
                 </div>

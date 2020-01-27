@@ -32,6 +32,8 @@ class Student_Model extends CI_Model
         $this->db->set('reg',$data['reg']);
         $this->db->set('session',$data['session']);
         $this->db->set('batch',$data['batch']);
+        $this->db->set('phone',$data['phone']);
+        $this->db->set('email',$data['email']);
         $this->db->where('id',$data['id']);
         $this->db->update('tbl_student');
 

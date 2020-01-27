@@ -28,10 +28,12 @@ class Book extends CI_Controller {
 		$data['bookname']=$this->input->post('bookname');		
 		$data['auth']=$this->input->post('auth');
 		$data['dept']=$this->input->post('dept');	
+		$data['stock']=$this->input->post('stock');	
 		$name=$data['bookname'];
 		$dept=$data['dept'];
 		$auth=$data['auth'];	
-		if(empty($name) && empty($dept) && empty($auth) ){
+		$stock=$data['stock'];	
+		if(empty($name) && empty($dept) && empty($auth)&& empty($stock) ){
            $sdata=array();
            $sdata['msg']='<span style="color:red ">field must not be empty</span>';
            $this->session->set_flashdata($sdata);
@@ -79,12 +81,14 @@ class Book extends CI_Controller {
 		$data['bookname']=$this->input->post('name');
 		$data['dept']=$this->input->post('dept');
 		$data['auth']=$this->input->post('auth');
+		$data['stock']=$this->input->post('stock');
         
         $id=$data['bookid'];  
 		$name=$data['bookname'];
 		$dept=$data['dept'];
 		$auth=$data['auth'];
-		if(empty($name) && empty($dept) && empty($auth) ){
+		$stock=$data['stock'];
+		if(empty($name) && empty($dept) && empty($auth) && empty($stock)){
            $sdata=array();
            $sdata['msg']='<span style="color:red ">field must not be empty</span>';
            $this->session->set_flashdata($sdata);

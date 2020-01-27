@@ -1,3 +1,43 @@
+
+<script>
+    $(document).ready(function() {
+        $("#Department").change(function(){
+              var dep =$("#Department").val();
+              $.ajax({
+                type:"POST",
+                url:"<?php echo base_url();?>manage/getBookByDepId/"+dep,
+                success:function(data){
+                   $("#book").html(data);
+                }
+              });
+        });
+    });
+     $(document).ready(function() {
+        $("#stu").change(function(){
+              var stu =$("#stu").val();
+              $.ajax({
+                type:"POST",
+                url:"<?php echo base_url();?>manage/getStuDataById/"+stu,
+                success:function(data){
+                   $("#reg").html(data);
+                }
+              });
+        });
+    });
+      $(document).ready(function() {
+        $("#stu").change(function(){
+              var stu =$("#stu").val();
+              $.ajax({
+                type:"POST",
+                url:"<?php echo base_url();?>manage/getsesStuDataById/"+stu,
+                success:function(data){
+                   $("#ses").html(data);
+                }
+              });
+        });
+    });
+
+</script>
 <H2>Edit issue</h2>
 <hr/>		
 <?php
@@ -20,12 +60,12 @@
                 <input type="hidden" name="id" value="<?php echo $issueById->id; ?>" >
                 <div class="form-group">
                     <label>Student Name</label>
-                      <select name="dept" class="dep">
+                      <select name="sname" class="dep" id="stu" >
                         <option value="">select one</option>
                         <?php
                             foreach ($studata as $sdata) { 
                             if ($issueById->sname==$sdata->id) { ?>
-                            <option style="" value="<?php echo $sdata->id; ?>" selected="selected" > 
+                            <option style="" value="<?php echo $sdata->id; ?>" > 
                                 <?php 
                                   echo $sdata->name; 
                                 ?>
@@ -33,7 +73,7 @@
                                 <?php  } else{ ?>            
                      
                          
-                            <option style="" value="<?php echo $sdata->id; ?>"> 
+                            <option style="" value="<?php echo $sdata->id; ?>" > 
                                 <?php 
                                   echo $sdata->name; 
                                 ?>
@@ -44,14 +84,31 @@
                         ?>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label>Department</label>
-                    <select name="dept" class="dep">
+                    <label>Student Reg.</label>
+                    <!-- <input type="text" name="reg" id="reg" class="form-control span12"> -->
+                     <select name="reg" class="dep" id="reg" >
+                        <option value="" > </option>
+                        
+                    </select>
+                </div>
+
+                 <div class="form-group">
+                    <label>Session</label>
+                    <select name="ses" class="dep" id="ses" >
+                        <option value=""> </option>                     
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Department(book)</label>
+                    <select name="dept" class="dep" id="Department">
                         <option value="">select one</option>
                         <?php
                             foreach ($departdata as $ddata) { 
-                            if ($stuById->dept==$ddata->depid) { ?>
-                            <option style="" value="<?php echo $ddata->depid; ?>" selected="selected" > 
+                            if ($issueById->dept==$ddata->depid) { ?>
+                            <option style="" value="<?php echo $ddata->depid; ?>"  > 
                                 <?php 
                                   echo $ddata->depname; 
                                 ?>
@@ -68,23 +125,18 @@
                             }}
                         ?>
                     </select>
-                </div>
+                </div>  
                 <div class="form-group">
-                    <label>Roll No.</label>
-                    <input type="text" name="roll" value="<?php echo $stuById->roll; ?>" class="form-control span12">
-                </div>
-				<div class="form-group">
-                    <label>Reg. No.</label>
-                    <input type="text" name="reg" value="<?php echo $stuById->reg; ?>" class="form-control span12">
-                </div>
+                    <label>Book name &nbsp</label>
+                    <select name="book" class="dep" id="book">
+                        <option value=""> </option>
+                        
+                    </select>
+                </div>  
                 <div class="form-group">
-                    <label>Session</label>
-                    <input type="text" name="session" value="<?php echo $stuById->session; ?>" class="form-control span12">
-                </div>
-                <div class="form-group">
-                    <label>Batch</label>
-                    <input type="text" name="batch" value="<?php echo $stuById->batch; ?>" class="form-control span12">
-                </div>
+                    <label>Return date &nbsp(Y/DD/MM)</label>
+                    <input type="text" name="return" value="<?php echo $issueById->return; ?>">
+                </div>          
                 <div class="form-group">
 				<input type="submit" name="" class="btn btn-primary" value="Submit"> 
                 </div>

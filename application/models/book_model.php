@@ -25,6 +25,7 @@ class Book_Model extends CI_Model
         $this->db->set('bookname',$data['bookname']);
         $this->db->set('dept',$data['dept']);
         $this->db->set('auth',$data['auth']);
+        $this->db->set('stock',$data['stock']);
         $this->db->where('bookid',$data['bookid']);
         $this->db->update('tbl_book');
   }

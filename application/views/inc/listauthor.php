@@ -1,3 +1,5 @@
+ <script src="<?php echo base_url(); ?>lib/jquery.dataTables.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>lib/jquery.dataTables.css"/>
 <h2>Author List</h2>
 <hr/>
 <?php
@@ -7,7 +9,7 @@
         echo $msg;
     }
 ?>
-<table class="table">
+<table  class="display" id="Asfak">
   <thead>
     <tr>
       <th>SL.</th>
@@ -32,3 +34,8 @@
    <?php } ?> 
   </tbody>
 </table>
+<script>
+  $(document).ready(function() {
+        $('#Asfak').dataTable();
+    });
+</script>
