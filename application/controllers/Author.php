@@ -11,6 +11,9 @@ class Author extends CI_Controller {
         $this->output->set_header("Pragma: no-cache");
 		$this->load->model('auth_model');
 		$data=array();	
+		if (!$this->session->userdata('userlogin')) {
+			redirect('user/login');
+		}
 	}
 	public function addauthor(){
 		$data['title']='Add new department';

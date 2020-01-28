@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,10 +31,8 @@
 
               <ul class="dropdown-menu">                
                 <li class="divider"></li>
-                <li class="dropdown-header">Admin Panel</li>
-                <li><a href="<?php echo base_url();?>user/create">Create account</a></li>             
-                <li><a href="<?php echo base_url();?>user/admins">Administrator</a></li>             
-                <li><a tabindex="-1" href="<?php echo base_url();?>user/logout">Logout</a></li>
+                <li class="dropdown-header">Admin Panel</li>           
+                <li><a href="<?php echo base_url();?>user/create">Create account</a></li>              
               </ul>
             </li>
           </ul>
@@ -41,3 +40,46 @@
         </div>
       </div>
     </div>
+
+<body class=" theme-blue">
+ 
+<div class="dialog loginform">
+<span style="text-align: center;"> 
+<?php
+ $msg=$this->session->flashdata('msg');
+ if(isset($msg))
+    {
+        echo $msg;
+    }
+?>   
+</span>
+    <div class="panel panel-default">
+        <p class="panel-heading no-collapse">Sign In</p>
+        <div class="panel-body">
+            <form action="<?php echo base_url();?>User/loginForm" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="name" class="form-control span12" required="">
+                </div>
+                <div class="form-group">
+                <label>Password</label>
+                    <input type="password" name="pass" class="form-controlspan12 form-control" required="">
+                </div>
+				
+				<div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+ <div class="footenote">
+ <h2>ICT</h2>
+ </div> 
+</body></html>
+<script src="<?php echo base_url(); ?>lib/bootstrap/js/bootstrap.js"></script>

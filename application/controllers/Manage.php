@@ -16,6 +16,9 @@ class Manage extends CI_Controller {
 		$this->load->model('manage_model');
 		
 		$data=array();	
+		if (!$this->session->userdata('userlogin')) {
+			redirect('user/login');
+		}
 	}
 	public function issuebook(){
       	$data=array();

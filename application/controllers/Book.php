@@ -13,6 +13,9 @@ class Book extends CI_Controller {
 		$this->load->model('dep_model');
 		$this->load->model('auth_model');
 		$data=array();	
+		if (!$this->session->userdata('userlogin')) {
+			redirect('user/login');
+		}
 	}
 	public function addbook(){
 		$data['title']='Add new book';
